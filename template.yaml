@@ -8,7 +8,7 @@ Resources:
   MicrofrontBucket1:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: MfBucket1
+      BucketName: unique-mfbucket1-12345
       OwnershipControls:
         Rules:
           - ObjectOwnership: BucketOwnerPreferred
@@ -42,14 +42,14 @@ Resources:
         Statement:
           - Action: "s3:GetObject"
             Effect: Allow
-            Resource: !Sub "arn:aws:s3:::MfBucket1/*"
+            Resource: !Sub "arn:aws:s3:::unique-mfbucket1-12345/*"
             Principal: "*"
 
   # S3 Bucket for Microfront 2
   MicrofrontBucket2:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: MfBucket2
+      BucketName: unique-mfbucket2-12345
       OwnershipControls:
         Rules:
           - ObjectOwnership: BucketOwnerPreferred
@@ -83,7 +83,7 @@ Resources:
         Statement:
           - Action: "s3:GetObject"
             Effect: Allow
-            Resource: !Sub "arn:aws:s3:::MfBucket2/*"
+            Resource: !Sub "arn:aws:s3:::unique-mfbucket2-12345/*"
             Principal: "*"
 
 Outputs:
