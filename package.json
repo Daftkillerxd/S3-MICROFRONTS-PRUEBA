@@ -1,0 +1,19 @@
+{
+  "name": "prueba-microfront-1-2",
+  "version": "1.0.0",
+  "description": "Despliegue en S3 - PRUEBA JEJE",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daftkillerxd/S3-MICROFRONTS-PRUEBA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daftkillerxd/S3-MICROFRONTS-PRUEBA/issues"
+  },
+  "homepage": "https://github.com/Daftkillerxd/S3-MICROFRONTS-PRUEBA#readme"
+}
