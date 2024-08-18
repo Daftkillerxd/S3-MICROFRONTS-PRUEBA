@@ -20,7 +20,7 @@ phases:
     commands:
       - echo "Build completed on `date`"
       - sam package --template-file template.yaml --output-template-file packaged.yaml --s3-bucket dev-prueba --debug
-      - aws cloudformation deploy --template-file packaged.yaml --stack-name stack-virusito --capabilities CAPABILITY_NAMED_IAM 
+      - aws cloudformation deploy --template-file packaged.yaml --stack-name stack-virusito --capabilities CAPABILITY_NAMED_IAM --region us-east-2
       - echo "Deploying Microfront 1"
       - aws s3 sync ./front/microfront1 s3://MfBucket1 --delete
       - echo "Deploying Microfront 2"
