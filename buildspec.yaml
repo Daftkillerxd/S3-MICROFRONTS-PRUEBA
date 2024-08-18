@@ -12,15 +12,16 @@ phases:
 
   build:
     commands:
+      - sam build --debug  # Añadir --debug para obtener más detalles
 
   post_build:
     commands:
       - aws cloudformation deploy --template-file packaged.yaml --stack-name stack-prueba --capabilities CAPABILITY_NAMED_IAM --region us-east-2
       - echo "Deploying Microfront 1"
-      - aws s3 sync ./front/microfront1 s3://s3-mf-microfront1 --delete
+      - aws s3 sync ./front/microfront1 s3://MfBucket1 --delete
       - echo "Deploying Microfront 2"
-      - aws s3 sync ./front/microfront2 s3://s3-mf-microfront2 --delete
+      - aws s3 sync ./front/microfront2 s3://MfBucket2 --delete
 
 artifacts:
   files:
-    - template.yaml 
+    - template.yaml
