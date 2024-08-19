@@ -10,12 +10,12 @@ phases:
       - pip show aws-sam-cli  # Verificar la instalación de SAM CLI
 
   pre_build:
-    commands:
+    commands: []
 
   build:
     commands:
       - sam build --debug  # Añadir --debug para obtener más detalles
-
+  
   post_build:
     commands:
       - sam package --template-file template.yaml --output-template-file packaged.yaml --s3-bucket dev-prueba --debug
@@ -24,8 +24,6 @@ phases:
       - aws s3 sync ./front/microfront1 s3://s3-mf-viru --delete
       - echo "Deploying Microfront 2"
       - aws s3 sync ./front/microfront2 s3://s3-mf-viru2 --delete
-      - echo "Revisando eventos de la pila"
-      - aws cloudformation describe-stack-events --stack-name stack-prueba --region us-east-2
 
 artifacts:
   files:
