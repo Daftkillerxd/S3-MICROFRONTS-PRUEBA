@@ -24,6 +24,8 @@ phases:
       - aws s3 sync ./front/microfront1 s3://s3-mf-viru --delete
       - echo "Deploying Microfront 2"
       - aws s3 sync ./front/microfront2 s3://s3-mf-viru2 --delete
+      - echo "Revisando eventos de la pila"
+      - aws cloudformation describe-stack-events --stack-name stack-prueba --region us-east-2
 
 artifacts:
   files:
